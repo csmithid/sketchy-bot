@@ -1,0 +1,19 @@
+{
+  "name": "sketchy-bot",
+  "version": "0.0.1",
+  "description": "A Discord bot that will post new sketch ideas every day.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csmithid/sketchy-bot.git"
+  },
+  "author": "Cole Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csmithid/sketchy-bot/issues"
+  },
+  "homepage": "https://github.com/csmithid/sketchy-bot#readme"
+}

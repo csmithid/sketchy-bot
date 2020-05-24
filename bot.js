@@ -21,12 +21,12 @@ client.on("ready", async () => {
 });
 
 const scheduleMessage = () => {
-  const dailyMessage = schedule.scheduleJob("0 9 * * *", async () => {
+  const dailyMessage = schedule.scheduleJob("0 12 * * *", async () => {
     console.log("Posting a new challenge.");
     try {
       channel = await client.channels.fetch("713459935836635218");
       channel.send(
-        `@here ✒ The daily sketch challenge: draw a ${getRandomItem()}!`
+        `@here ✒ The daily challenge: try drawing ${getRandomItem()}!`
       );
     } catch (err) {
       console.log(err);
@@ -45,7 +45,7 @@ client.on("message", (msg) => {
 
 client.on("message", (msg) => {
   if (natural.JaroWinklerDistance(msg.content, "What should I draw?") >= 0.9) {
-    msg.reply(`try drawing a ${getRandomItem()}!`);
+    msg.reply(`try drawing ${getRandomItem()}!`);
   }
 });
 

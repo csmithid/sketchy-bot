@@ -5,6 +5,7 @@ const discord = require("discord.js");
 const client = new discord.Client();
 const schedule = require("node-schedule");
 var natural = require("natural");
+const a = require("indefinite");
 
 console.log(process.env.BOT_TOKEN);
 
@@ -26,7 +27,7 @@ const scheduleMessage = () => {
     try {
       channel = await client.channels.fetch("713459935836635218");
       channel.send(
-        `@here ✒ The daily challenge: try drawing ${getRandomItem()}!`
+        `@here ✒ The daily challenge: try drawing ${a(getRandomItem())}!`
       );
     } catch (err) {
       console.log(err);
@@ -45,7 +46,7 @@ client.on("message", (msg) => {
 
 client.on("message", (msg) => {
   if (natural.JaroWinklerDistance(msg.content, "What should I draw?") >= 0.9) {
-    msg.reply(`try drawing ${getRandomItem()}!`);
+    msg.reply(`try drawing ${a(getRandomItem())}!`);
   }
 });
 
